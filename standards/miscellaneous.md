@@ -57,3 +57,28 @@ In software, there is very little that can't be tested using automated tests. De
 
 **Why:** Automated testing shortens feedback loops, and prevents testing from being postponed or justified out.
 
+## Prefer higher order functions
+Prefer the use of higher order functions (e.g. map, filter, fold) over procedural algorithms.
+
+Sometimes higher order functions are technically possible but clunky, so don't force it and know when it's pragmatic to just write a for loop.
+
+**Why:** Higher order functions provide patterns that make rationalising about code significantly easier. There is a learning curve if you're not familiar with the approach, but it is worth it.
+
+## Prefer immutable data
+Prefer data, especially domain data, to be immutable.
+
+Some languages (e.g. rust), provide varying levels of immutable guarantees over technically mutable data. Depending on how strong the guarantee is, it can be similarly effective.
+
+**Why:** Immutable data is significantly easier to rationalise about.
+
+## Prefer thread-safe communication with immutable data
+When communicating data across threads, prefer the use of immutable data to prevent contention.
+
+Threads should own their data & objects, with communication only via controlled data passing, never direct instance access.
+
+**Why:** Locks and deadlocks are a common source of bugs and require a fair level of design and thought. It is significantly easier to manage the underlying communication mechanism using other techniques, and communicate immutable data.
+
+## Use an explicit threading model
+Design and stick to an explicit threading model, do not spin adhoc threads without due consideration and alignment.
+
+**Why:** Threading is a common source of bugs and often requires significant design and thought. A well-defined pattern reduces cognitive load and highlights optimisation opportunities.
