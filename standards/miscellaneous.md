@@ -55,4 +55,5 @@ Use BDD processes and technologies for all levels of abstraction higher than alg
 ## Near full automated test coverage
 In software, there is very little that can't be tested using automated tests. Design for automated testing from the start in greenfield work, and aggressively drive automated testing for any legacy that doesn't already have it.
 
-**Why:** 
+**Why:** Automated testing shortens feedback loops, and prevents testing from being postponed or justified out.
+
